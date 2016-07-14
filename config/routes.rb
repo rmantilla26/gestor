@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root 'home#index'
+
   resources :audit_process_activities
   resources :audit_processes
   resources :audits
