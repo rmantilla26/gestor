@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Audit Processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Audit</th>
+      <th>Cprocess</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audit_processes.each do |audit_process| %>
+      <tr>
+        <td><%= audit_process.audit %></td>
+        <td><%= audit_process.cprocess %></td>
+        <td><%= link_to 'Show', audit_process %></td>
+        <td><%= link_to 'Edit', edit_audit_process_path(audit_process) %></td>
+        <td><%= link_to 'Destroy', audit_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Audit process', new_audit_process_path %>

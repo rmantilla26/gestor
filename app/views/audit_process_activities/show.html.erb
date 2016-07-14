@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Audit:</strong>
+  <%= @audit_process_activity.audit %>
+</p>
+
+<p>
+  <strong>Cprocess:</strong>
+  <%= @audit_process_activity.cprocess %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @audit_process_activity.activity %>
+</p>
+
+<%= link_to 'Edit', edit_audit_process_activity_path(@audit_process_activity) %> |
+<%= link_to 'Back', audit_process_activities_path %>

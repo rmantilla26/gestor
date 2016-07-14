@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  audit_id: 
+  cprocess_id: 
+
+two:
+  audit_id: 
+  cprocess_id: 

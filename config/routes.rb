@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :audit_process_activities
+  resources :audit_processes
+  resources :audits
+  resources :project_employees
+  resources :projects
+  resources :activities
+  resources :cprocesses
+  resources :areas
+  resources :employees
+  resources :roles
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

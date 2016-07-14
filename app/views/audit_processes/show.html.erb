@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Audit:</strong>
+  <%= @audit_process.audit %>
+</p>
+
+<p>
+  <strong>Cprocess:</strong>
+  <%= @audit_process.cprocess %>
+</p>
+
+<%= link_to 'Edit', edit_audit_process_path(@audit_process) %> |
+<%= link_to 'Back', audit_processes_path %>

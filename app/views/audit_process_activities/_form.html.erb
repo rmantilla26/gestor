@@ -1,0 +1,29 @@
+<%= form_for(@audit_process_activity) do |f| %>
+  <% if @audit_process_activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@audit_process_activity.errors.count, "error") %> prohibited this audit_process_activity from being saved:</h2>
+
+      <ul>
+      <% @audit_process_activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :audit_id %><br>
+    <%= f.text_field :audit_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cprocess_id %><br>
+    <%= f.text_field :cprocess_id %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_id %><br>
+    <%= f.text_field :activity_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cprocess.name %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @cprocess.purpose %>
+</p>
+
+<p>
+  <strong>Abbreviation:</strong>
+  <%= @cprocess.abbreviation %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @cprocess.area %>
+</p>
+
+<%= link_to 'Edit', edit_cprocess_path(@cprocess) %> |
+<%= link_to 'Back', cprocesses_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cprocesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Purpose</th>
+      <th>Abbreviation</th>
+      <th>Area</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cprocesses.each do |cprocess| %>
+      <tr>
+        <td><%= cprocess.name %></td>
+        <td><%= cprocess.purpose %></td>
+        <td><%= cprocess.abbreviation %></td>
+        <td><%= cprocess.area %></td>
+        <td><%= link_to 'Show', cprocess %></td>
+        <td><%= link_to 'Edit', edit_cprocess_path(cprocess) %></td>
+        <td><%= link_to 'Destroy', cprocess, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cprocess', new_cprocess_path %>

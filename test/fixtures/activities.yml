@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cprocess_id: 
+  order: 1
+  description: MyString
+  role_id: 
+
+two:
+  cprocess_id: 
+  order: 1
+  description: MyString
+  role_id: 
