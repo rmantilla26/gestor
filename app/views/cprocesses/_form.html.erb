@@ -1,33 +1,9 @@
-<%= form_for(@cprocess) do |f| %>
-  <% if @cprocess.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cprocess.errors.count, "error") %> prohibited this cprocess from being saved:</h2>
 
-      <ul>
-      <% @cprocess.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :purpose %><br>
-    <%= f.text_field :purpose %>
-  </div>
-  <div class="field">
-    <%= f.label :abbreviation %><br>
-    <%= f.text_field :abbreviation %>
-  </div>
-  <div class="field">
-    <%= f.label :area_id %><br>
-    <%= collection_select(:cprocess, :area_id, Area.all, :id, :name) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@cprocess, :html => {:multipart => true}) do |f| %>
+<%= f.error_notification %>
+<%= f.input :name, label: 'Name' %>
+<%= f.input :purpose, label: 'Purpose', as: :text  %>
+<%= f.input :abbreviation, label: 'Abbreviation' %>
+<%= f.association :area %>
+<%= f.submit%>
 <% end %>

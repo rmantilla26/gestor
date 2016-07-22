@@ -1,8 +1,7 @@
 <tr>
-	<td><%= activity.order %></td>
-	<td><%= activity.role.name %></td>
+	<td align="center"><%= activity.order %></td>
+	<td align="center"><%= activity.role.name %></td>
 	<td><b><%= activity.title %></b><br><%= simple_format(activity.description) %></td>
-	<td><%= link_to 'Show', activity %></td>
-	<td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-	<td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= link_to 'Edit', edit_cprocess_activity_path(@cprocess,activity) %></td>
+	<td><%= link_to 'Destroy', cprocess_activity_path(@cprocess,activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

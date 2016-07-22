@@ -1,5 +1,8 @@
-<h1>New Activity</h1>
+
+<h4><%= link_to 'Atras', cprocess_path(@cprocess) %></h4>
+<h3>New Activity</h3>
+<h5><%=@cprocess.name%></h5>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', activities_path %>
+

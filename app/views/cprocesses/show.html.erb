@@ -12,9 +12,11 @@
 <%= link_to 'Back', cprocesses_path %>
 
 
-<h3>Listing Activities</h3>
-
-<table>
+<h3>Listing Activities<span>
+<%= link_to('+', new_cprocess_activity_path(@cprocess) , :class => 'btn btn-sm btn-default') %>
+</span>
+</h3>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Order</th>

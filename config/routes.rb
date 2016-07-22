@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :cprocess_activities
   resources :projects
   root 'home#index'
 
@@ -9,11 +8,15 @@ Rails.application.routes.draw do
   resources :audits
   resources :project_employees
   resources :projects
-  resources :activities
-  resources :cprocesses
   resources :areas
   resources :employees
   resources :roles
+
+
+  resources :cprocesses do
+    resources :activities
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
