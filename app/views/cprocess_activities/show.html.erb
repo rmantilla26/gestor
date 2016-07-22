@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cprocess:</strong>
+  <%= @cprocess_activity.cprocess %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @cprocess_activity.activity %>
+</p>
+
+<%= link_to 'Edit', edit_cprocess_activity_path(@cprocess_activity) %> |
+<%= link_to 'Back', cprocess_activities_path %>

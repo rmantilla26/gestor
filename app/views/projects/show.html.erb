@@ -1,24 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @project.name %>
+	<strong>Name:</strong>
+	<%= @project.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @project.description %>
+	<strong>Description:</strong>
+	<%= @project.description %>
 </p>
 
 <p>
-  <strong>Startdate:</strong>
-  <%= @project.startDate %>
+	<strong>Start date:</strong>
+	<%= @project.start_date %>
 </p>
 
 <p>
-  <strong>Enddate:</strong>
-  <%= @project.endDate %>
+	<strong>End date:</strong>
+	<%= @project.end_date %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+<h2>Members</h2>
+<%= render(@project.employees) %>
+
+<h3>New member</h3>
+<%= form_for(@project) do |f| %>
+<%= f.fields_for :project_employees do |project_employees| %>
+<div class="employees_fields">
+	<div class="field">
+	<%= f.label :employee_id %><br>
+    <%= collection_select(:project_employees, :employee_id, Amployee.all, :id, :name) %>
+	</div>
+</div>
+<% end %>
+<% end %>

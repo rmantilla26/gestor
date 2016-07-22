@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714194119) do
+ActiveRecord::Schema.define(version: 20160715154233) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "cprocess_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160714194119) do
     t.integer  "role_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "title"
   end
 
   add_index "activities", ["cprocess_id"], name: "index_activities_on_cprocess_id"
@@ -62,6 +63,16 @@ ActiveRecord::Schema.define(version: 20160714194119) do
   end
 
   add_index "audits", ["project_id"], name: "index_audits_on_project_id"
+
+  create_table "cprocess_activities", force: :cascade do |t|
+    t.integer  "cprocess_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "cprocess_activities", ["activity_id"], name: "index_cprocess_activities_on_activity_id"
+  add_index "cprocess_activities", ["cprocess_id"], name: "index_cprocess_activities_on_cprocess_id"
 
   create_table "cprocesses", force: :cascade do |t|
     t.string   "name"

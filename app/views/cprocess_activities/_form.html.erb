@@ -1,0 +1,25 @@
+<%= form_for(@cprocess_activity) do |f| %>
+  <% if @cprocess_activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cprocess_activity.errors.count, "error") %> prohibited this cprocess_activity from being saved:</h2>
+
+      <ul>
+      <% @cprocess_activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cprocess_id %><br>
+    <%= f.text_field :cprocess_id %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_id %><br>
+    <%= f.text_field :activity_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

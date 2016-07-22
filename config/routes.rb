@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :cprocess_activities
+  resources :projects
   root 'home#index'
 
   resources :audit_process_activities

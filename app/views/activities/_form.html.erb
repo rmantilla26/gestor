@@ -13,19 +13,23 @@
 
   <div class="field">
     <%= f.label :cprocess_id %><br>
-    <%= f.text_field :cprocess_id %>
+    <%= collection_select(:activity, :cprocess_id, Cprocess.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :order %><br>
     <%= f.number_field :order %>
   </div>
   <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :role_id %><br>
-    <%= f.text_field :role_id %>
+    <%= collection_select(:activity, :role_id, Role.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

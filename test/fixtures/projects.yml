@@ -3,11 +3,11 @@
 one:
   name: MyString
   description: MyString
-  startDate: 2016-07-14
-  endDate: 2016-07-14
+  start_date: 2016-07-14
+  end_date: 2016-07-14
 
 two:
   name: MyString
   description: MyString
-  startDate: 2016-07-14
-  endDate: 2016-07-14
+  start_date: 2016-07-14
+  end_date: 2016-07-14

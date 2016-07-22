@@ -18,7 +18,7 @@
       <tr>
         <td><%= activity.cprocess %></td>
         <td><%= activity.order %></td>
-        <td><%= activity.description %></td>
+        <td><b><%= activity.title %></b><br><%= activity.description %></td>
         <td><%= activity.role %></td>
         <td><%= link_to 'Show', activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
