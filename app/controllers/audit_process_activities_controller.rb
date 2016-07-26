@@ -40,16 +40,22 @@ class AuditProcessActivitiesController < ApplicationController
   # PATCH/PUT /audit_process_activities/1
   # PATCH/PUT /audit_process_activities/1.json
   def update
+
+    if @audit_process_activity.completed 
+      @audit_process_activity.completed = false
+    else
+     @audit_process_activity.completed = true
+   end
+
+   @audit_process_activity.save
+
     respond_to do |format|
-      if @audit_process_activity.update(audit_process_activity_params)
-        format.html { redirect_to @audit_process_activity, notice: 'Audit process activity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @audit_process_activity }
-      else
-        format.html { render :edit }
-        format.json { render json: @audit_process_activity.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to @audit_process_activity, notice: 'Audit process activity was successfully updated' }
+      format.js
+      format.json { head :no_content }
     end
-  end
+
+end
 
   # DELETE /audit_process_activities/1
   # DELETE /audit_process_activities/1.json
@@ -71,4 +77,4 @@ class AuditProcessActivitiesController < ApplicationController
     def audit_process_activity_params
       params.require(:audit_process_activity).permit(:audit_id, :cprocess_id, :activity_id)
     end
-end
+  end

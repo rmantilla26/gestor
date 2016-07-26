@@ -2,11 +2,10 @@
 
 <h1>Processes</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Purpose</th>
       <th>Abbreviation</th>
       <th>Area</th>
       <th colspan="2">Options</th>
@@ -17,7 +16,6 @@
     <% @cprocesses.each do |cprocess| %>
       <tr>
         <td><%= link_to cprocess.name, cprocess %></td>
-        <td><%= cprocess.purpose %></td>
         <td><%= cprocess.abbreviation %></td>
         <td><%= cprocess.area.name %></td>
         <td><%= link_to 'Edit', edit_cprocess_path(cprocess) %></td>

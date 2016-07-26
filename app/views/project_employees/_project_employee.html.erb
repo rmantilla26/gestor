@@ -1,0 +1,6 @@
+<tr>
+	<td align="left"><%= project_employee.role.name %></td>
+	<td align="left"><%= project_employee.employee.name %></td>
+	<td><%= link_to 'Edit', edit_project_project_employee_path(@project,project_employee) %></td>
+	<td><%= link_to 'Destroy', project_project_employee_path(@project,project_employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

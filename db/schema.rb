@@ -35,15 +35,16 @@ ActiveRecord::Schema.define(version: 20160715154233) do
 
   create_table "audit_process_activities", force: :cascade do |t|
     t.integer  "audit_id"
-    t.integer  "cprocess_id"
+    t.integer  "audit_process_id"
     t.integer  "activity_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "completed",        default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "audit_process_activities", ["activity_id"], name: "index_audit_process_activities_on_activity_id"
   add_index "audit_process_activities", ["audit_id"], name: "index_audit_process_activities_on_audit_id"
-  add_index "audit_process_activities", ["cprocess_id"], name: "index_audit_process_activities_on_cprocess_id"
+  add_index "audit_process_activities", ["audit_process_id"], name: "index_audit_process_activities_on_audit_process_id"
 
   create_table "audit_processes", force: :cascade do |t|
     t.integer  "audit_id"

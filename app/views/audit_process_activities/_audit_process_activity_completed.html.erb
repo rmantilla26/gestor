@@ -1,0 +1,1 @@
+<%=button_to audit_process_activity.completed ? "Completed" : "Not Completed", audit_process_activity_path(audit_process_activity.id),method: :put, remote: true, class: audit_process_activity.completed ? "btn btn-xs btn-success" : "btn btn-xs", title: audit_process_activity.activity.title %>

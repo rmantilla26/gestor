@@ -16,3 +16,21 @@
 
  */
 
+.progress_parent {
+  display: flex;
+}
+.progress_narrow {
+  width: 200px;
+}
+.progress_wide {
+  flex: 1;
+  /* Grow to rest of container */
+}
+
+.panel-title {
+    margin-bottom: -21px; 
+}
+
+a:hover{
+    color: black;
+}

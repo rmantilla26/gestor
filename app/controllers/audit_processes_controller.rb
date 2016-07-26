@@ -1,6 +1,6 @@
 class AuditProcessesController < ApplicationController
   before_action :set_audit_process, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /audit_processes
   # GET /audit_processes.json
   def index

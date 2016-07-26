@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=audit_process.id%>">
+				<div class="progress_parent">
+					<div class="progress_wide"><%= audit_process.cprocess.name %></div>
+					<div class="progress_narrow" id="audit_processes<%=audit_process.id%>">
+
+					<%= render partial: "audit_processes/audit_progressbar", :locals => {:audit_process => audit_process}  %>
+
+					</div>
+				</div>
+			</a>
+			
+		</h4>
+	</div>
+	<div id="collapse<%=audit_process.id%>" class="panel-collapse collapse">
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th width="20%">Responsible</th>
+						<th width="60%">Description</th>
+						<th width="20%">Estatus</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<%= render audit_process.audit_process_activities %>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>

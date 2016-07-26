@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-	<strong>Name:</strong>
-	<%= @project.name %>
-</p>
-
-<p>
-	<strong>Description:</strong>
-	<%= @project.description %>
-</p>
+<h3><%= @project.name %></h3>
+<h5><%= @project.description %></h5>
 
 <p>
 	<strong>Start date:</strong>
@@ -23,17 +16,39 @@
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 
-<h2>Members</h2>
-<%= render(@project.employees) %>
 
-<h3>New member</h3>
-<%= form_for(@project) do |f| %>
-<%= f.fields_for :project_employees do |project_employees| %>
-<div class="employees_fields">
-	<div class="field">
-	<%= f.label :employee_id %><br>
-    <%= collection_select(:project_employees, :employee_id, Amployee.all, :id, :name) %>
-	</div>
-</div>
-<% end %>
-<% end %>
+<h3>Members<span>
+<%= link_to('+', new_project_project_employee_path(@project) , :class => 'btn btn-sm btn-default') %>
+</span>
+</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render @project.project_employees %>
+  </tbody>
+</table>
+
+
+<h3>Audits<span>
+<%= link_to('+', new_project_audit_path(@project) , :class => 'btn btn-sm btn-default') %>
+</span>
+</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Observation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render @project.audits %>
+  </tbody>
+</table>

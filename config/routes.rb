@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   
-  resources :projects
   root 'home#index'
 
   resources :audit_process_activities
   resources :audit_processes
-  resources :audits
-  resources :project_employees
-  resources :projects
   resources :areas
   resources :employees
   resources :roles
 
-
+  resources :projects do
+    resources :project_employees
+    resources :audits
+  end
+ 
   resources :cprocesses do
     resources :activities
   end

@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @audit.project %>
-</p>
+<h3><%= @project.name %></h3>
+<h5><%= @project.description %></h5>
 
-<p>
-  <strong>Description:</strong>
-  <%= @audit.description %>
-</p>
+<h6><%= @audit.description %></h6>
 
-<%= link_to 'Edit', edit_audit_path(@audit) %> |
-<%= link_to 'Back', audits_path %>
+<%= link_to 'Edit', edit_project_audit_path(@project,@audit) %> |
+<%= link_to 'Back', project_path(@project) %>
+
+<h3>Processes<span>
+</span>
+</h3>
+
+<div id="accordion" class="panel-group">
+	<%= render @audit.audit_processes %>
+</div>

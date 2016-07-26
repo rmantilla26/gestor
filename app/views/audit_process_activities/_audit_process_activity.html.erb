@@ -1,0 +1,5 @@
+<tr>
+	<td align="left"><%= audit_process_activity.activity.role.name %></td>
+	<td><b><%= audit_process_activity.activity.title %></b><br><%= simple_format(audit_process_activity.activity.description) %></td>
+	<td id="completedButton<%=audit_process_activity.id%>"><%= render partial: "audit_process_activities/audit_process_activity_completed", :locals => {:audit_process_activity => audit_process_activity}  %></td>
+</tr>

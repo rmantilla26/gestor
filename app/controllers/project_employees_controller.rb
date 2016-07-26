@@ -1,5 +1,7 @@
 class ProjectEmployeesController < ApplicationController
   before_action :set_project_employee, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:new, :create, :destroy, :edit, :update]
+
 
   # GET /project_employees
   # GET /project_employees.json
@@ -14,7 +16,7 @@ class ProjectEmployeesController < ApplicationController
 
   # GET /project_employees/new
   def new
-    @project_employee = ProjectEmployee.new
+    @project_employee =  @project.project_employees.build 
   end
 
   # GET /project_employees/1/edit
@@ -24,15 +26,15 @@ class ProjectEmployeesController < ApplicationController
   # POST /project_employees
   # POST /project_employees.json
   def create
-    @project_employee = ProjectEmployee.new(project_employee_params)
+    @project_employee = @project.project_employees.build(project_employee_params)
 
     respond_to do |format|
       if @project_employee.save
-        format.html { redirect_to @project_employee, notice: 'Project employee was successfully created.' }
-        format.json { render :show, status: :created, location: @project_employee }
+        format.html { redirect_to @project, notice: 'Project employee was successfully created.' }
+        format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
-        format.json { render json: @project_employee.errors, status: :unprocessable_entity }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +44,11 @@ class ProjectEmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @project_employee.update(project_employee_params)
-        format.html { redirect_to @project_employee, notice: 'Project employee was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project_employee }
+        format.html { redirect_to @project, notice: 'Project employee was successfully updated.' }
+        format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
-        format.json { render json: @project_employee.errors, status: :unprocessable_entity }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,12 +58,16 @@ class ProjectEmployeesController < ApplicationController
   def destroy
     @project_employee.destroy
     respond_to do |format|
-      format.html { redirect_to project_employees_url, notice: 'Project employee was successfully destroyed.' }
+      format.html { redirect_to @project, notice: 'Project employee was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_project
+      @project = Project.find(params[:project_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_project_employee
       @project_employee = ProjectEmployee.find(params[:id])

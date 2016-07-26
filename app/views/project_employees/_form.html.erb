@@ -1,29 +1,7 @@
-<%= form_for(@project_employee) do |f| %>
-  <% if @project_employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project_employee.errors.count, "error") %> prohibited this project_employee from being saved:</h2>
 
-      <ul>
-      <% @project_employee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :project_id %><br>
-    <%= f.text_field :project_id %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.text_field :employee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :role_id %><br>
-    <%= f.text_field :role_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for([@project, @project_employee], :html => {:multipart => true}) do |f| %>
+<%= f.error_notification %>
+<%= f.association :role %>
+<%= f.association :employee %>
+<%= f.submit%>
 <% end %>

@@ -1,0 +1,3 @@
+$('#completedButton<%=@audit_process_activity.id%>').html("<%= escape_javascript render partial: 'audit_process_activities/audit_process_activity_completed', :locals => {:audit_process_activity => @audit_process_activity} %>");
+
+$('#audit_processes<%=@audit_process_activity.audit_process_id%>').html("<%= escape_javascript render partial: 'audit_processes/audit_progressbar', :locals => {:audit_process => @audit_process_activity.audit_process}  %>");
