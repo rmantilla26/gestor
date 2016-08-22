@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822154912) do
+ActiveRecord::Schema.define(version: 20160822162557) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "cprocess_id"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160822154912) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "sprint"
+    t.integer  "sprint_size"
   end
 
   add_index "audits", ["project_id"], name: "index_audits_on_project_id"
