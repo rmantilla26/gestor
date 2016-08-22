@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h4><%= link_to 'Back', projects_path %></h4>
 
 <h3><%= @project.name %></h3>
 <h5><%= @project.description %></h5>
@@ -13,10 +13,10 @@
 	<%= @project.end_date %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p id="notice"><%= notice %></p>
 
 
+<!--
 <h3>Members<span>
 <%= link_to('+', new_project_project_employee_path(@project) , :class => 'btn btn-sm btn-default') %>
 </span>
@@ -34,17 +34,18 @@
   <%= render @project.project_employees %>
   </tbody>
 </table>
+-->
 
-
-<h3>Audits<span>
+<h3>Sprint Audits<span>
 <%= link_to('+', new_project_audit_path(@project) , :class => 'btn btn-sm btn-default') %>
 </span>
 </h3>
 <table class="table">
   <thead>
     <tr>
+      <th>Sprint</th>
       <th>Observation</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 

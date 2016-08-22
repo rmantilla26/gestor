@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', cprocesses_path %>
 
 <h3><%= @cprocess.name %> (<%= @cprocess.abbreviation %>)</h3>
 <h5><%= @cprocess.area.name %></h5>
@@ -8,9 +8,7 @@
   <%= @cprocess.purpose %>
 </p>
 
-<%= link_to 'Edit', edit_cprocess_path(@cprocess) %> |
-<%= link_to 'Back', cprocesses_path %>
-
+<p id="notice"><%= notice %></p>
 
 <h3>Listing Activities<span>
 <%= link_to('+', new_cprocess_activity_path(@cprocess) , :class => 'btn btn-sm btn-default') %>

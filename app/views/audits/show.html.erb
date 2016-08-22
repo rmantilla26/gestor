@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h4><%= link_to 'Back', project_path(@project)  %></h4>
 
 <h3><%= @project.name %></h3>
 <h5><%= @project.description %></h5>
 
-<h6><%= @audit.description %></h6>
+<h6><%= @audit.sprint_text %></h6>
 
-<%= link_to 'Edit', edit_project_audit_path(@project,@audit) %> |
-<%= link_to 'Back', project_path(@project) %>
+<p id="notice"><%= notice %></p>
 
 <h3>Processes<span>
 </span>

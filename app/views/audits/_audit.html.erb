@@ -1,6 +1,6 @@
 <tr>
+	<td><%= link_to audit.sprint_text , project_audit_path(@project,audit) %></td>
 	<td align="left"><%= audit.description %></td>
-	<td><%= link_to 'Show', project_audit_path(@project,audit) %></td>
 	<td><%= link_to 'Edit', edit_project_audit_path(@project,audit) %></td>
 	<td><%= link_to 'Destroy', project_audit_path(@project,audit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

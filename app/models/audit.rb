@@ -5,6 +5,12 @@ class Audit < ActiveRecord::Base
 	belongs_to :project
 	has_many :audit_processes, -> { order(created_at: :asc) }, dependent: :destroy
 
+  validates :sprint, :presence => true
+  
+  def sprint_text
+    "Sprint #{self.sprint}"
+  end
+
 	private
 	def add_cprocesses_to_audit
 
@@ -15,4 +21,6 @@ class Audit < ActiveRecord::Base
       	AuditProcess.create(audit_id: self.id, cprocess_id: process.id)
       end
   end
+
+
 end
