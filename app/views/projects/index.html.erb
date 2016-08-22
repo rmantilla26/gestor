@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h3>Projects<span>
+<%= link_to('+', new_project_path , :class => 'btn btn-sm btn-default') %>
+</span>
+</h3>
  
 <table class="table">
   <thead>
@@ -26,7 +29,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
