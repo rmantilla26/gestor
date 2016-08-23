@@ -28,24 +28,3 @@
 <br>
 
 <%= link_to 'New Cprocess', new_cprocess_path %>
-
-
- <% @cprocesses.each do |cprocess| %>
-  Cprocess.create([{ name: '<%=cprocess.name%>', purpose: '<%=cprocess.purpose%>',abbreviation: '<%=cprocess.abbreviation%>', area_id: <%=cprocess.area_id%>}])<br>
-<% end %>
-
-<% 
-
-@activities = Activity.all
-
- @activities.each do |activity| %>
-  Activity.create([{ cprocess_id: <%=activity.cprocess_id%>, order: <%=activity.order%>, title: '<%=activity.title%>', description: '<%=activity.description%>', role_id: <%=activity.role_id%>}])<br>
-<% end %>
-
-
-%>
- <% 
- @cprocessesa = CprocessActivity.all
-  @cprocessesa.each do |cprocessa| %>
-  CprocessActivity.create([{ name: '<%=cprocess.name%>', purpose: '<%=cprocess.purpose%>',abbreviation: '<%=cprocess.abbreviation%>', area_id: <%=cprocess.area_id%>}])<br>
-<% end %>
