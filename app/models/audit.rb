@@ -23,7 +23,7 @@ class Audit < ActiveRecord::Base
       processes =  Cprocess.all
       processes.each do |process|
 
-        if process.id == 5
+        if process.id == 2
           sprint_size.times do |i|
             AuditProcess.create(audit_id: self.id, cprocess_id: process.id)
           end
