@@ -28,3 +28,8 @@
 <br>
 
 <%= link_to 'New Cprocess', new_cprocess_path %>
+
+
+ <% @cprocesses.each do |cprocess| %>
+  Cprocess.create([{ name: '<%=cprocess.name%>', abbreviation: '<%=cprocess.abbreviation%>', area_id: <%=cprocess.area_id%>}])
+<% end %>
